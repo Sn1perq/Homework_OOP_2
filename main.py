@@ -7,13 +7,12 @@ def parse_recipes(file_path):
       i = 0
       while i < len(lines):
           dish_name = lines[i].strip()
-          if not dish_name:  # Пропускаем пустые строки
+          if not dish_name:
               i += 1
               continue
 
           i += 1
 
-          # Проверка, что следующая строка содержит число
           if i < len(lines):
               try:
                   quantity = int(lines[i].strip())
@@ -44,14 +43,8 @@ def parse_recipes(file_path):
 
   return cook_book
 
-# Укажите путь к вашему файлу
 file_path = 'recipes.txt'
 cook_book = parse_recipes(file_path)
-
-
-
-
-
 
 def get_shop_list_by_dishes(dishes, person_count):
   shop_list = {}
